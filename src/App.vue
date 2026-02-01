@@ -48,7 +48,6 @@ const goToTelegram=()=>{
           Crafting high-performance, responsive, and visually stunning web interfaces. Focused on Vue 3 and clean, scalable code that turns ideas into digital reality.
         </p>
         <button class="doc" @click="goToTelegram">Hire Me Now </button>
-        <button class="hero-git" @click="goToGithub" style="cursor: pointer;">My Github </button>
       </div>
       <img src="https://i.pinimg.com/originals/81/a3/81/81a3814b744a05eef011eb7efd07b153.gif" class="right-img" alt="">
     </div>

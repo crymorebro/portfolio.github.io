@@ -346,3 +346,8 @@ body {
     margin-bottom: 30px;
     }
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}

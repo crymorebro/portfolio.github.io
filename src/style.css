@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+    --bg: #0000003d;
+    --text: #ffffff;
+    --accent: #7c0000;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --nav-border: rgba(255, 255, 255, 0.1);
+    --transition: all 0.3s ease;
+}
+
+:root.light {
+    --bg: #ffffff;
+    --text: #000000;
+    --card-bg: #f9f9f9;
+    --nav-border: #e8e8e8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Zalando Sans Expanded', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body { 
+    background-color: var(--bg); 
+    color: var(--text); 
+    overflow-x: hidden; }
+a { 
+    text-decoration: none; 
+    color: inherit; 
+    transition: var(--transition); 
+}
+button { 
+    cursor: pointer; 
+    border: none; 
+    background: none; 
+    transition: var(--transition); }
+img { 
+    object-fit: cover; 
+    max-width: 100%; }
+
+/* Navigation */
+nav {
+    display: flex; 
+    gap: 30px; 
+    align-items: center; 
+    justify-content: center;
+    position: fixed; 
+    top: 16px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    padding: 12px 24px; 
+    border-radius: 16px; 
+    border: 1px solid var(--nav-border);
+    background: var(--bg); z-index: 1000;
+    height: 8vh;
+    
+}
+
+.nav-links { 
+    display: flex; 
+    align-items: center; 
+    gap: 25px; 
+}
+.nav-links a:hover { 
+    color: var(--accent); 
+    transform: scale(1.1); 
+}
+
+.nav-githublink {
+    background: var(--accent); 
+    padding: 8px 16px; 
+    border-radius: 8px;
+    display: flex; 
+    align-items: center; 
+    gap: 8px; color: #fff !important;
+}
+
+
+.nav-git-ico{
+    height:1em;
+}
+/* Hero Section */
+.hero {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    padding: 150px 60px 80px; 
+    gap: 40px; 
+    min-height: 80vh;
+}
+
+.hero-left { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    flex: 1; 
+}
+
+.hero h2 { 
+    font-size: 3em; 
+    line-height: 1.1; 
+}
+
+.doc, .hero-git {
+    padding: 12px 24px; 
+    border-radius: 12px; 
+    background: #000; 
+    color: #fff;
+    border: 1px solid #333; 
+    margin-right: 10px;
+}
+
+.right-img { 
+    width: 45%; 
+    border-radius: 30px; 
+}
+
+/* Projects Grid */
+.projects {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; 
+    padding: 80px 60px; 
+    text-align: center; 
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.project-top { 
+    grid-column: 1 / -1; 
+    margin-bottom: 40px; 
+}
+.project-top h2 { 
+    font-size: 2.5em; 
+    margin-bottom: 10px; 
+}
+
+.project-calc, .project-portf, .project-soon {
+    background: var(--card-bg); 
+    padding: 40px; 
+    border-radius: 20px;
+    border: 1px solid var(--nav-border);
+}
+
+
+.project-calc.aos-animate:hover, 
+.project-portf.aos-animate:hover, 
+.project-soon.aos-animate:hover {
+    /* !important чтобы перебить AOS а то херня полная */
+    transform: translateY(-15px) scale(1.02) !important; 
+    border-color: var(--accent) !important; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important; 
+}
+
+/* Contacts */
+.contacts { background: #000; padding: 100px 20px; color: #fff; margin-top: 100px; }
+.contact-info {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; max-width: 1000px; margin: 40px auto 0;
+}
+
+.contact-item {
+    display: flex; align-items: center; gap: 20px; padding: 20px;
+    background: rgba(255,255,255,0.05); border-radius: 15px;
+}
+
+.contact-icon {
+    width: 50px; 
+    height: 50px; 
+    background: var(--accent);
+    border-radius: 10px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { 
+    width: 10px; 
+    background: #1a1a1a; 
+}
+::-webkit-scrollbar-thumb { 
+    background: var(--accent); 
+    border-radius: 10px; }
+
+/* Media Queries */
+@media (max-width: 900px) {
+    .hero { 
+        flex-direction: column; 
+        text-align: center; 
+        padding: 120px 20px 40px; 
+    }
+    .right-img 
+    { width: 80%; }
+    .nav-links a,.nav-githublink,.right-img:not(.nav-githublink a) { display: none; } 
+}
+
+
+.nav-githublink {
+    background: var(--accent);
+    box-shadow: 0 0 15px rgba(124, 0, 0, 0.3);
+}
+.nav-git{
+    color: white !important;
+}
+.nav-githublink:hover {
+    box-shadow: 0 0 25px rgba(124, 0, 0, 0.5);
+    transform: scale(1.01) translateY(-1px);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-link{
+    background-color: var(--accent);
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: var(--text);
+    transition: transform 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.project-link:hover{
+    transform:scale(1.05) !important
+}
+
+.contacts-header{
+    text-align: center;
+}
+@media (max-width: 900px) {
+    .hero { 
+        flex-direction: column; 
+        text-align: center; 
+        padding: 120px 20px 40px; 
+    }
+    
+    .right-img { 
+        width: 100%; 
+        max-width: 400px; 
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a:not(.nav-githublink a) { 
+        font-size: 0.8em; 
+    }
+
+    .nav-git { display: none; } 
+    .nav-githublink { padding: 8px; }
+}
+
+/* Адаптив для Bento-сетки */
+@media (max-width: 768px) {
+    .projects {
+        grid-template-columns: 1fr; 
+        padding: 40px 20px;
+    }
+
+    .project-calc, .project-portf, .project-soon {
+        grid-column: span 1 !important; 
+        padding: 25px;
+    }
+
+    .hero h2 {
+        font-size: 2.2em; 
+    }
+}
+
+.glow-capture {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    filter: blur(80px); 
+    opacity: 0.4; 
+}
+
+.blob {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: move 20s infinite alternate;
+}
+
+  /* Расставляем пятна в разные углы */
+.blob:nth-child(1) { top: -10%; left: -10%; background: #b10000; }
+.blob:nth-child(2) { bottom: -10%; right: -10%; width: 600px; }
+.blob:nth-child(3) { top: 40%; left: 30%; width: 300px; opacity: 0.5; }
+
+@keyframes move {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(200px, 100px) scale(1.2); }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000 !important; 
+    color: #ffffff;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-attachment: fixed;
+}
+
+:root.light body {
+    background-color: #ffffff !important;
+    color: #000000;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+:root.light .right-img {
+    filter: invert(1) hue-rotate(180deg); 
+}
+
+@media (max-width: 768px) {
+    .hero {
+    flex-direction: column-reverse; 
+    padding: 80px 20px;
+    text-align: center;
+    }
+    
+    .hero-left h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    }
+    .hero-left button {
+    width: 100%;
+    margin-bottom: 10px; 
+    height: 50px;
+    }
+    .right-img {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 30px;
+    }
+}

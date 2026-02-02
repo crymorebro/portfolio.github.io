@@ -4,7 +4,6 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
 export default defineConfig({
-  // Убедись, что название репозитория в ссылке совпадает с GitHub!
   base: '/portfolio.github.io/', 
   plugins: [
     vue(),

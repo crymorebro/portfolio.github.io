@@ -208,10 +208,11 @@ nav {
         flex-direction: column; 
         text-align: center; 
         padding: 120px 20px 40px; 
+        
     }
     .right-img 
     { width: 80%; }
-    .nav-links a,.nav-githublink,.right-img:not(.nav-githublink a) { display: none; } 
+    .nav-links a,.nav-githublink { display: none; } 
 }
 
 
@@ -380,20 +381,6 @@ html, body {
 .hero {
     min-height: auto; 
     padding-bottom: 40px; 
-}
-
-@media (max-width: 900px) {
-    nav {
-        width: 20%;
-        justify-content: space-between; 
-        gap: 10px;
-    }
-    .theme-toggle {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        padding-right: 0 !important; 
-    }
 }
 
 .blob {

@@ -7,6 +7,13 @@
     --card-bg: rgba(255, 255, 255, 0.05);
     --nav-border: rgba(255, 255, 255, 0.1);
     --transition: all 0.3s ease;
+    --blob1-top: -10%;
+    --blob1-left: -10%;
+    --blob2-bottom: -10%;
+    --blob2-right: -10%;
+    --blob3-top: 30%;
+    --blob3-left: 30%;
+    --blob-color: var(--accent);
 }
 
 :root.light {
@@ -14,6 +21,13 @@
     --text: #000000;
     --card-bg: #f9f9f9;
     --nav-border: #e8e8e8;
+    --blob1-top: 60%;
+    --blob1-left: 80%;
+    --blob2-bottom: 50%;
+    --blob2-right: 70%;
+    --blob3-top: 10%;
+    --blob3-left: 10%;
+    --blob-color: #ff0000;
 }
 
 * {
@@ -139,7 +153,7 @@ nav {
     margin-bottom: 10px; 
 }
 
-.project-calc, .project-portf, .project-soon {
+.project-calc, .project-portf, .project-soon, .project-old {
     background: var(--card-bg); 
     padding: 40px; 
     border-radius: 20px;
@@ -149,7 +163,8 @@ nav {
 
 .project-calc.aos-animate:hover, 
 .project-portf.aos-animate:hover, 
-.project-soon.aos-animate:hover {
+.project-soon.aos-animate:hover,
+.project-old.aos-animate:hover {
     /* !important чтобы перебить AOS а то херня полная */
     transform: translateY(-15px) scale(1.02) !important; 
     border-color: var(--accent) !important; 
@@ -293,7 +308,7 @@ nav {
   /* Расставляем пятна в разные углы */
 .blob:nth-child(1) { top: -10%; left: -10%; background: #b10000; }
 .blob:nth-child(2) { bottom: -10%; right: -10%; width: 600px; }
-.blob:nth-child(3) { top: 40%; left: 30%; width: 300px; opacity: 0.5; }
+.blob:nth-child(3) { top: 40%; left: 30%; width: 300px; opacity: 0.7; }
 
 @keyframes move {
     from { transform: translate(0, 0) scale(1); }
@@ -359,6 +374,7 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
     position: relative;
+    scroll-behavior: smooth;
 }
 
 .hero {
@@ -378,4 +394,34 @@ html, body {
         transform: translateX(-50%);
         padding-right: 0 !important; 
     }
+}
+
+.blob {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: var(--blob-color);
+    border-radius: 50%;
+    transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1); 
+    animation: move 20s infinite alternate;
+}
+
+/* Расставляем пятна через переменные */
+.blob:nth-child(1) { 
+    top: var(--blob1-top); 
+    left: var(--blob1-left); 
+    background: var(--blob-color); 
+}
+
+.blob:nth-child(2) { 
+    bottom: var(--blob2-bottom); 
+    right: var(--blob2-right); 
+    width: 600px; 
+}
+
+.blob:nth-child(3) { 
+    top: var(--blob3-top); 
+    left: var(--blob3-left); 
+    width: 300px; 
+    opacity: 0.7; 
 }

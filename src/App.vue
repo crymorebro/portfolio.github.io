@@ -5,11 +5,8 @@ const darkMode = ref(true)
 
 const toggleTheme = () => {
   darkMode.value = !darkMode.value
-  document.body.style.backgroundColor = darkMode.value ? '#000000' : '#ffffff'
-  document.body.style.color = darkMode.value ? '#ffffff' : '#000000'
-  document.documentElement.classList.toggle('light')
+  document.documentElement.classList.toggle('light', !darkMode.value)
 }
-
 const goToGithub=()=>{
   window.location.href='https://github.com/crymorebro'
 }
@@ -17,6 +14,7 @@ const goToGithub=()=>{
 const goToTelegram=()=>{
   window.location.href='https://t.me/crymorebro'
 }
+
 
 
 </script>
@@ -56,19 +54,25 @@ const goToTelegram=()=>{
         <h2>My Projects</h2>
         <p>A collection of my recent works where design meets functional code.</p>
       </div>
-      <div class="project-calc" data-aos="fade-left" data-aos-delay="200">
-        <h3>Benchpress Calculator</h3>
+      <div class="project-calc" data-aos="zoom-in" data-aos-delay="200">
+        <h3>Benchpress Calculator V2</h3>
         <p>Analyze and track your lifting performance with precise strength formulas.</p>
-        <a href="https://crymorebro.github.io/GYMlezha.github.io/" target="_blank" class="project-link">Link</a>
+        <a href="https://gy-mlezha-v2.vercel.app/" target="_blank" class="project-link">Link</a>
       </div>
-      <div class="project-portf" data-aos="fade-left" data-aos-delay="200">
+      <div class="project-portf" data-aos="zoom-in" data-aos-delay="200">
         <h3>My Porfolio</h3>
         <p>My digital identity built with Vue 3, featuring glassmorphism and smooth motion.</p>
         <a href="#" target="_blank" class="project-link">Link</a>
       </div>
-      <div class="project-soon" data-aos="fade-left" data-aos-delay="200">
-        <h3>Upcoming...</h3>
-        <p>Exploring new technologies and expnding my stack</p>
+      <div class="project-soon" data-aos="zoom-in" data-aos-delay="200">
+        <h3>Cryptodash</h3>
+        <p>Real-time crypto portfolio analyzer with CoinGecko API integration and interactive charts.</p>
+        <a href="https://crymorebro.github.io/CryptoDash/" target="_blank" class="project-link">Link</a>
+      </div>
+      <div class="project-old" data-aos="zoom-in" data-aos-delay="200">
+        <h3>Gymlezha OLD</h3>
+        <p>Analyze and track your lifting performance with precise strength formulas.</p>
+        <a href="https://crymorebro.github.io/GYMlezha.github.io/" target="_blank" class="project-link">Link</a>
       </div>
     </div>
     <div class="contacts" id="contacts">
